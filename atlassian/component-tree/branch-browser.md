@@ -1,6 +1,7 @@
 ---
 title: Branch browser
 parent: Component Tree for Jira
+grand_parent: Atlassian
 nav_order: 5
 ---
 

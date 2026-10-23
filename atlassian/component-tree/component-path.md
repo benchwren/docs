@@ -1,6 +1,7 @@
 ---
 title: Component path field
 parent: Component Tree for Jira
+grand_parent: Atlassian
 nav_order: 4
 ---
 

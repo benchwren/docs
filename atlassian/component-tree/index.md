@@ -1,8 +1,9 @@
 ---
 title: Component Tree for Jira
-nav_order: 2
+parent: Atlassian
+nav_order: 1
 has_children: true
-permalink: /component-tree/
+permalink: /atlassian/component-tree/
 ---
 
 # Component Tree for Jira

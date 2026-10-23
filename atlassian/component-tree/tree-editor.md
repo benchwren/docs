@@ -1,6 +1,7 @@
 ---
 title: Tree editor
 parent: Component Tree for Jira
+grand_parent: Atlassian
 nav_order: 2
 ---
 

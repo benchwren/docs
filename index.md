@@ -4,19 +4,14 @@ layout: home
 nav_order: 1
 ---
 
-# Benchwren
+# Benchwren docs
 
 Benchwren makes small, focused apps for the tools your team already uses. Each app does one job well, runs entirely on the platform it extends, and stays out of your way.
 
-## Apps
+Apps are grouped by the platform they run on. Pick one from the menu, or start below.
 
-### Component Tree for Jira
+## Atlassian
 
-Turn Jira's flat list of components into a tree, and search a whole branch with one JQL clause.
-
-- Arrange components into parents and children with drag and drop.
-- Search a component and everything under it: `component in componentBranch("KEY", "Platform")`.
-- See the full path, like `Platform / Payments / Refunds`, on every work item.
-- Runs on Atlassian. No data leaves your Jira site.
-
-[Read the Component Tree docs](/component-tree/){: .btn .btn-primary }
+| App | What it does |
+|---|---|
+| [Component Tree for Jira](/atlassian/component-tree/) | Arrange Jira components into a tree, search a whole branch with one JQL clause, and see each work item's full component path. Runs on Atlassian. |

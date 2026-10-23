@@ -1,6 +1,7 @@
 ---
 title: Limits and FAQ
 parent: Component Tree for Jira
+grand_parent: Atlassian
 nav_order: 6
 ---
 

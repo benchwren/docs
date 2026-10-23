@@ -1,6 +1,6 @@
-title: Benchwren
+title: Benchwren Docs
 description: Small, focused apps for the tools your team already uses.
-url: https://benchwren.com
+url: https://docs.benchwren.com
 permalink: pretty
 
 remote_theme: just-the-docs/just-the-docs@v0.10.1
@@ -15,11 +15,11 @@ back_to_top: true
 back_to_top_text: Back to top
 
 aux_links:
-  Atlassian Marketplace: https://marketplace.atlassian.com/
+  benchwren.com: https://benchwren.com/
 
 footer_content: >-
-  © 2026 Benchwren. Component Tree for Jira is an independent app and is not made or endorsed by Atlassian.
-  Jira and Atlassian are trademarks of Atlassian Pty Ltd.
+  © 2026 Benchwren. Benchwren apps are independent and are not made or endorsed by the platforms they extend.
+  Atlassian and Jira are trademarks of Atlassian Pty Ltd.
 
 exclude:
   - README.md
