@@ -27,7 +27,7 @@ The app doesn't store work item content, comments, attachments or anything about
 | `storage:app` | Keep the tree in Forge storage |
 | `read:app-data:jira`, `write:app-data:jira` | Keep saved filters up to date and write the Component path field |
 
-The app acts as itself, never on behalf of individual users.
+Before it reads or changes anything, the app checks the permissions of the person using it, as that person. Viewing needs permission to browse the space. Changing the tree needs space admin or Jira admin rights. Branch browser counts run as the person viewing them. Background updates, such as refreshing saved filters and path values, run as the app. Atlassian normally grants this access automatically; if Jira shows an "Allow access" prompt, accepting it once is enough.
 
 ## Who can change what
 
@@ -36,7 +36,6 @@ The app acts as itself, never on behalf of individual users.
 
 ## Known limits
 
-- **Counts and issue security.** Because the app reads as itself, branch browser counts can include work items hidden from the viewer by an issue security scheme. Only the counts are affected; no work item details are shown, and the search a branch link opens respects your permissions.
 - **Error messages.** A `componentBranch` query that names a space or component that doesn't exist returns an error saying so. That error can confirm whether a space key or component name exists.
 
 ## Removing data

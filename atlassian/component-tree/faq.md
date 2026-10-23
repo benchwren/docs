@@ -28,7 +28,7 @@ Space admins and Jira admins, from **Space settings → Component tree**. Everyo
 
 ### Do users need to grant the app access?
 
-No. The app doesn't act on behalf of individual users, so nobody sees an "Allow access" prompt.
+Usually not. The app checks your permissions and counts work items as you, so it never shows you more than you can already see. Atlassian normally grants that access automatically. If Jira ever shows an **Allow access** prompt, accept it once and the app will load.
 
 ### How fast do filters, boards and paths update after I move a component?
 
@@ -40,7 +40,7 @@ Jira's components and work items are untouched. Saved filters that use `componen
 
 ### Do the counts respect issue security?
 
-Not fully. The branch browser counts work items as the app, so a count can include work items hidden from you by an issue security scheme. Opening the branch's search shows only the work items you're allowed to see. See [Data and security](../data-and-security/).
+Yes. The branch browser counts work items as you, so work items hidden from you by an issue security scheme aren't counted.
 
 ### Something isn't working
 
