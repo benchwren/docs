@@ -44,4 +44,4 @@ Not fully. The branch browser counts work items as the app, so a count can inclu
 
 ### Something isn't working
 
-Contact support from the Marketplace listing. Tell us the space type (software, service or business), what you did, and what you saw.
+Email [support@benchwren.com](mailto:support@benchwren.com). The [Support](/support/) page lists what to include.
