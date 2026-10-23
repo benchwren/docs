@@ -38,6 +38,10 @@ Before it reads or changes anything, the app checks the permissions of the perso
 
 - **Error messages.** A `componentBranch` query that names a space or component that doesn't exist returns an error saying so. That error can confirm whether a space key or component name exists.
 
+## Privacy
+
+How Benchwren handles personal data, including app logs, licence contacts and support email, is described in the [Privacy policy](/legal/privacy/).
+
 ## Removing data
 
 When an admin uninstalls the app, Atlassian removes the app's Forge storage under its data retention rules for Forge apps. Jira's components and work items are not changed.
