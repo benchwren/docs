@@ -8,6 +8,8 @@ permalink: /support/
 
 Email **[support@benchwren.com](mailto:support@benchwren.com)** for help with any Benchwren app, including questions, problems, licensing, and data or privacy requests (see our [Privacy policy](/legal/privacy/)).
 
+Benchwren is the trading name of Shray Kumar, so our apps are listed on the Atlassian Marketplace under the partner name **Shray Kumar**.
+
 We're based in India (IST, UTC+5:30) and aim to reply within two business days.
 
 ## What to include

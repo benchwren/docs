@@ -8,6 +8,8 @@ permalink: /legal/privacy/
 
 **Effective date:** 23 October 2026
 
+Benchwren is the trading name of Shray Kumar, a sole proprietor based in India, who is the Atlassian Marketplace partner for our apps.
+
 This policy explains what personal data Benchwren handles, why, and what you can do about it. It covers:
 
 - Benchwren apps, starting with **Component Tree for Jira**;
