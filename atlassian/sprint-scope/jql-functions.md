@@ -2,79 +2,76 @@
 title: JQL functions
 parent: Sprint Scope for Jira
 grand_parent: Atlassian
-nav_order: 1
+nav_order: 2
 ---
 
 # JQL functions
 
 ```
-issue in inSprintAtStart("Sprint 5")
-issue in addedAfterSprintStart("Sprint 5")
-issue in removedAfterSprintStart("Sprint 5")
+issue in inSprintAtStart("Sprint 14")
+issue in addedAfterSprintStart("Sprint 14")
+issue in removedAfterSprintStart("Sprint 14")
 ```
 
-Each function takes one argument: a sprint's **name** or its **id**. Use them with `in` or `not in`.
-
-## Naming the sprint
-
-- **By name:** `addedAfterSprintStart("Sprint 5")`. Upper and lower case don't matter. If several sprints on the site share the name, the function asks you to use the id instead.
-- **By id:** `addedAfterSprintStart(37)`. Open the sprint's **Sprint burndown** report from the board's **Reports** page. The id is the number after `sprint=` in the page address.
-
-An id always means the same sprint, even if someone renames it later. Prefer ids in saved filters and boards.
-
-## Examples
-
-Everything added after the sprint started:
+Each function takes one argument, a sprint's name or id (see [Pick a sprint](../getting-started/#1-pick-a-sprint)), and works with `in` and `not in`. Combine them with any other JQL:
 
 ```
-issue in addedAfterSprintStart("Sprint 5")
+issue in addedAfterSprintStart(37) AND type = Bug ORDER BY created DESC
 ```
 
-Added work that isn't finished yet:
+## `inSprintAtStart`
 
-```
-issue in addedAfterSprintStart("Sprint 5") AND statusCategory != Done
-```
+The work that was in the sprint at the moment it started: the scope the team committed to. It stays the same for the life of the sprint, whatever happens afterwards.
 
-The committed scope, minus anything taken out:
+## `addedAfterSprintStart`
 
-```
-issue in inSprintAtStart("Sprint 5") AND issue not in removedAfterSprintStart("Sprint 5")
-```
+Work that joined the sprint after it started, whether it was moved in from the backlog or another sprint, or created straight into the sprint.
 
-Bugs that were added mid-sprint:
+## `removedAfterSprintStart`
 
-```
-issue in addedAfterSprintStart(37) AND type = Bug
-```
+Work that was in the sprint at some point after it started, and was out of it when the sprint closed. For an active sprint, it's the work that has left so far. This includes work that was added mid-sprint and then taken out again.
+
+## A worked example
+
+Sprint 14 starts on Monday with 20 work items, including PAY-7 and PAY-12. During the sprint:
+
+| Work item | What happened | At start | Added | Removed |
+|---|---|:---:|:---:|:---:|
+| PAY-7 | Moved to the backlog on Tuesday, back into the sprint on Wednesday | ✓ | | |
+| PAY-12 | Moved to the backlog on Wednesday | ✓ | | ✓ |
+| PAY-31 | A bug created straight into the sprint on Tuesday | | ✓ | |
+| PAY-40 | Moved in on Thursday, moved to the next sprint on Friday | | ✓ | ✓ |
+| PAY-18 | Not finished; carried over to Sprint 15 when Sprint 14 closed | ✓ | | |
+
+PAY-7 counts as neither added nor removed, because it ended up where it started. PAY-18 isn't removed, because unfinished work carried over at close still belongs to the sprint, as in Jira's sprint report.
 
 ## The exact rules
 
 The functions follow Jira's sprint report:
 
-- **The start** is the sprint's start date. If the team changes the start date when it starts the sprint, that date is the line.
-- **Added** means the work item came into the sprint after the start: moved in, or created straight into the sprint.
-- **Removed** means the work item was in the sprint at some point after the start, and was out of it when the sprint closed. For an active sprint, it means out of the sprint now.
-- A work item taken out and put back again counts as **neither** added nor removed.
-- Unfinished work that moves on to the next sprint when the sprint closes is **not** counted as removed.
-- Changes made after a sprint closed are ignored.
+- **The start** is the sprint's start date. If the team edits the start date when starting the sprint, that date is the line.
+- **Added** means the work item joined after the start: moved in, or created straight into the sprint.
+- **Removed** means the work item was in the sprint after the start and out of it at close (for an active sprint: out of it now).
+- Work taken out and put back counts as **neither** added nor removed.
+- Unfinished work carried over to the next sprint at close is **not** removed.
+- Changes made after a sprint has closed are ignored.
 
-A sprint that hasn't started yet has no scope to report. The functions show an error for it.
+The functions look at sprint membership only. Conditions such as `statusCategory = Done` use each work item's **current** status, not its status when the sprint closed.
 
 ## How fresh are the results?
 
-Jira saves the result of a JQL function and reuses it. The app updates saved results automatically, usually within about 10 seconds, when:
+Jira saves the result of a JQL function and reuses it, which keeps filters and boards fast. The app updates saved results automatically, usually within about 10 seconds, when:
 
-- a work item's Sprint field changes, or a work item is created into a sprint;
+- work moves into or out of a sprint, or is created into one;
 - a sprint is started, edited or closed.
 
-A bulk move of many work items causes just one update.
+A bulk move of many work items causes a single update.
 
 ## Error messages
 
-| Message | What to do |
+| Message | What it means |
 |---|---|
-| Sprint "…" was not found or has not started | Check the name or id. A future sprint has no scope yet. |
-| More than one sprint is named "…" | Use the sprint's id. |
-| More than 1,000 work items match | Narrow the query, or see [Limits](../faq/#limits). |
-| Sprint "…" has too many work items for this app to check in one go | See [Limits](../faq/#limits). |
+| Sprint "Sprint 9" was not found or has not started | There's no sprint by that name or id, or it hasn't started yet. A future sprint has no scope to report. |
+| More than one sprint is named "Sprint 9" | Several sprints on the site share that name. Use the sprint's id instead. |
+| More than 1,000 work items match | One function's result is larger than Jira allows. See [Limits](../faq/#limits). |
+| Sprint "Sprint 9" has too many work items for this app to check in one go | The sprint is larger than the app can check. See [Limits](../faq/#limits). |

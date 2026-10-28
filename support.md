@@ -39,6 +39,7 @@ These pages answer the most common questions:
 - [Component Tree: Limits and FAQ](/atlassian/component-tree/faq/)
 - [Component Tree: Getting started](/atlassian/component-tree/getting-started/)
 - [Component Tree: Data and security](/atlassian/component-tree/data-and-security/)
+- [Sprint Scope: Getting started](/atlassian/sprint-scope/getting-started/)
 - [Sprint Scope: JQL functions](/atlassian/sprint-scope/jql-functions/)
 - [Sprint Scope: Limits and FAQ](/atlassian/sprint-scope/faq/)
 - [Sprint Scope: Data and security](/atlassian/sprint-scope/data-and-security/)

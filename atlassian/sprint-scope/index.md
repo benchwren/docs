@@ -8,28 +8,35 @@ permalink: /atlassian/sprint-scope/
 
 # Sprint Scope for Jira
 
-Jira Cloud can't search sprint history. Queries such as `sprint WAS "Sprint 5"` or `sprint CHANGED` are rejected, so there's no way to list the work that was added to a sprint after it started, or pulled out of it. The sprint report shows these changes, but you can't filter, export or build a board from it.
+A sprint starts with a plan. By the end, a couple of urgent bugs have been pulled in, a story has been dropped, and someone asks in the review what actually changed. Jira's sprint report shows it, but you can't search it: Jira Cloud rejects `sprint WAS` and `sprint CHANGED`, so you can't filter, export or build a board from scope change.
 
-Sprint Scope adds three JQL functions that answer exactly those questions.
+Sprint Scope adds three JQL functions that make sprint scope change searchable.
 
 ## What you get
 
 | Function | Finds |
 |---|---|
-| `issue in inSprintAtStart("Sprint 5")` | Work that was in the sprint when it started: the committed scope |
-| `issue in addedAfterSprintStart("Sprint 5")` | Work that came into the sprint after it started, including work created straight into it |
-| `issue in removedAfterSprintStart("Sprint 5")` | Work that was in the sprint and was taken out before it closed (or, for an active sprint, isn't in it now) |
+| **`inSprintAtStart`** | The committed scope: work that was in the sprint when it started. |
+| **`addedAfterSprintStart`** | Work that joined the sprint after it started, including work created straight into it. |
+| **`removedAfterSprintStart`** | Work that left the sprint before it closed, or, while the sprint is active, has left it so far. |
 
-They work anywhere Jira takes JQL: issue search, saved filters, boards, dashboards and automation rules. The results follow the same rules as Jira's sprint report.
+```
+issue in addedAfterSprintStart("Sprint 14")
+```
+
+Use them in work item search, saved filters, and anything built on a filter, such as boards and dashboard gadgets. They combine with any other JQL.
 
 ## How it fits with Jira
 
-- There's nothing to set up. Install the app, and the functions are available on every board on the site.
-- Results respect Jira permissions. People see only the work items they're already allowed to see.
-- It runs entirely on Atlassian's cloud (Forge, *Runs on Atlassian*). See [Data and security](data-and-security/).
+- **Nothing to set up.** Once the app is installed, the functions work for every sprint on the site, for everyone who can search.
+- **Same rules as the sprint report.** Work taken out and put back doesn't count as a change, and unfinished work carried over to the next sprint isn't counted as removed.
+- **Your permissions still apply.** People only ever see work items they're already allowed to see.
+- **Runs on Atlassian.** The app runs entirely on Atlassian's cloud (Forge) and only reads your site. See [Data and security](data-and-security/).
 
 ## Start here
 
-1. [JQL functions](jql-functions/): the three functions, with examples and the exact rules.
-2. [Limits and FAQ](faq/).
-3. [Data and security](data-and-security/).
+1. [Getting started](getting-started/): your first scope-change search in three steps.
+2. [JQL functions](jql-functions/): each function, a worked example, and the exact rules.
+3. [Sprint review recipes](recipes/): ready-made queries for reviews, retros and dashboards.
+4. [Limits and FAQ](faq/).
+5. [Data and security](data-and-security/).

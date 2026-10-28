@@ -2,7 +2,7 @@
 title: Data and security
 parent: Sprint Scope for Jira
 grand_parent: Atlassian
-nav_order: 3
+nav_order: 5
 ---
 
 # Data and security
@@ -13,9 +13,9 @@ Sprint Scope for Jira is built on Atlassian Forge and is eligible for Atlassian'
 
 | Data | Where it's stored |
 |---|---|
-| For each sprint the functions have been used on: the ids and creation dates of the work items that were in it, and when it was last checked | Forge storage, in Atlassian's cloud, separate for each Jira site |
+| A sprint's membership record: the ids and creation dates of work items that were in the sprint, and when the app last checked it. Kept only for sprints someone has searched. | Forge storage, in Atlassian's cloud, separate for each Jira site |
 | When each sprint's saved results were last updated | Forge storage |
-| Saved function results (lists of work item ids) | Jira itself, which stores the results of JQL functions |
+| Saved search results: lists of work item ids | Jira, which keeps the results of JQL functions |
 
 The app doesn't store work item content, comments, attachments or anything about users. Benchwren has no servers and can't see your data.
 
@@ -27,12 +27,12 @@ The app doesn't store work item content, comments, attachments or anything about
 | `read:sprint:jira-software` | Read sprints and their start and close dates |
 | `read:board-scope:jira-software`, `read:board-scope.admin:jira-software` | Read a sprint's board and the filter behind it, to find work items that moved in or out |
 | `read:project:jira` | Required by Jira's board APIs |
-| `storage:app` | Keep the per-sprint data above in Forge storage |
+| `storage:app` | Keep each sprint's membership record in Forge storage |
 | `read:app-data:jira`, `write:app-data:jira` | Keep Jira's saved function results up to date |
 
 The app only reads Jira. It never changes work items, sprints or boards.
 
-The functions read sprint history as the app, because Jira asks the app for one result that many people's searches share. Jira then applies each person's own permissions to that result, so nobody sees a work item they couldn't already see.
+The functions read sprint history as the app, because Jira computes one result per search that many people share, for example everyone who opens the same board. Jira then applies each person's own permissions to that result, so nobody sees a work item they couldn't already see.
 
 ## Known limits
 
