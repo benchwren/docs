@@ -15,3 +15,4 @@ Apps are grouped by the platform they run on. Pick one from the menu, or start b
 | App | What it does |
 |---|---|
 | [Component Tree for Jira](/atlassian/component-tree/) | Arrange Jira components into a tree, search a whole branch with one JQL clause, and see each work item's full component path. Runs on Atlassian. |
+| [Sprint Scope for Jira](/atlassian/sprint-scope/) | Search sprint scope change with JQL: work in a sprint at the start, added after it started, or removed. Runs on Atlassian. |

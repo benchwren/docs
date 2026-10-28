@@ -6,13 +6,13 @@ permalink: /legal/privacy/
 
 # Privacy policy
 
-**Effective date:** 23 October 2026
+**Effective date:** 28 October 2026
 
 Benchwren is the trading name of Shray Kumar, a sole proprietor based in India, who is the Atlassian Marketplace partner for our apps.
 
 This policy explains what personal data Benchwren handles, why, and what you can do about it. It covers:
 
-- Benchwren apps, starting with **Component Tree for Jira**;
+- Benchwren apps: **Component Tree for Jira** and **Sprint Scope for Jira**;
 - the websites `benchwren.com` and `docs.benchwren.com`;
 - email support at `support@benchwren.com`.
 
@@ -20,7 +20,7 @@ Benchwren is the trading name of Shray Kumar, an individual based in Gurugram, H
 
 ## The short version
 
-- Our apps run entirely on the platform they extend. Component Tree for Jira runs on Atlassian's cloud (Atlassian Forge). Benchwren has no servers, and your Jira content never comes to us.
+- Our apps run entirely on the platform they extend. Component Tree for Jira and Sprint Scope for Jira run on Atlassian's cloud (Atlassian Forge). Benchwren has no servers, and your Jira content never comes to us.
 - We don't sell personal data, show ads or use tracking cookies.
 - We see a small amount of information: the contact details Atlassian shares with app vendors, app error logs, and whatever you send us in support emails.
 
@@ -51,6 +51,27 @@ We can't see your Jira content, and we don't receive it.
 ### When you uninstall
 
 Uninstalling the app removes its access to your site. Atlassian deletes the app's Forge storage for your site under its retention rules for Forge apps. Values already written to the Component path field stay in your Jira site until you remove them.
+
+## Sprint Scope for Jira
+
+### What the app stores, and where
+
+The app keeps everything inside your Atlassian cloud site, on infrastructure run by Atlassian:
+
+| Data | Where it lives |
+|---|---|
+| For each sprint the app's functions have been used on: the ids and creation dates of the work items that were in it, and when it was last checked | Forge storage for your site, run by Atlassian |
+| Saved function results (lists of work item ids) | Your Jira site, which stores the results of JQL functions |
+
+The app only reads Jira; it never changes work items, sprints or boards. It reads sprints, boards, work items and the history of the Sprint field. It doesn't store work item content, comments, attachments or information about users. It reads as the app, and Jira applies each person's own permissions to the results, so nobody sees a work item they couldn't already see.
+
+### What we can see
+
+The same as for Component Tree for Jira: app logs, licence and contact details from Atlassian, and aggregate usage metrics. Sprint Scope's logs also include the sprint name or id that someone typed into one of its functions.
+
+### When you uninstall
+
+Uninstalling the app removes its access to your site. Atlassian deletes the app's Forge storage for your site under its retention rules for Forge apps. Your sprints and work items are not changed.
 
 ## Support
 
@@ -107,13 +128,13 @@ Data inside your Jira site, such as component names and Component path values, i
 
 ## Security
 
-The app follows Atlassian's Forge security model:
+Our apps follow Atlassian's Forge security model:
 
-- It asks only for the permissions it needs.
-- Its data is stored by Atlassian for your site alone.
-- Every change to the tree is checked on Atlassian's servers before it's saved.
+- They ask only for the permissions they need.
+- Their data is stored by Atlassian for your site alone.
+- In Component Tree for Jira, every change to the tree is checked on Atlassian's servers before it's saved. Sprint Scope for Jira only reads your site.
 
-The app's [Data and security](https://docs.benchwren.com/atlassian/component-tree/data-and-security/) page lists its permissions and known limits.
+Each app's Data and security page lists its permissions and known limits: [Component Tree](https://docs.benchwren.com/atlassian/component-tree/data-and-security/), [Sprint Scope](https://docs.benchwren.com/atlassian/sprint-scope/data-and-security/).
 
 ## Children
 
