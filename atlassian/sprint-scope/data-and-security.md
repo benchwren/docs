@@ -25,7 +25,7 @@ The app doesn't store work item content, comments, attachments or anything about
 |---|---|
 | `read:jira-work` | Read work items and the Sprint field's history |
 | `read:sprint:jira-software` | Read sprints and their start and close dates |
-| `read:board-scope:jira-software`, `read:board-scope.admin:jira-software` | Read a sprint's board and the filter behind it, to find work items that moved in or out |
+| `read:board-scope.admin:jira-software` | Read the filter behind a sprint's board, to find work items that moved in or out |
 | `read:project:jira` | Required by Jira's board APIs |
 | `storage:app` | Keep each sprint's membership record in Forge storage |
 | `read:app-data:jira`, `write:app-data:jira` | Keep Jira's saved function results up to date |
